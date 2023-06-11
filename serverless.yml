@@ -1,0 +1,22 @@
+service: myserverlessproject
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  profile: serverlessUser
+  iam: 
+    role:
+       statements:
+        - Effect: "Allow"
+          Action:
+           - "comprehend:*"
+           - "dynamodb:*"
+           - "ssm:GetParameter"
+          Resource: "*"
+
+functions:
+  useComprehendAndStoreInDynamo:
+    handler: calcSentimentAndStore/handler.hello
+  getSentimentFromDynamo:
+    handler: readFromDb/handler.funtwo

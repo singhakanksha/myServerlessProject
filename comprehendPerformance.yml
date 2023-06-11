@@ -1,0 +1,10 @@
+config:
+  target: https://npyv3z3q20.execute-api.us-east-1.amazonaws.com/dev
+  headers:
+    x-api-key: "{{ apiKey }}"
+
+scenarios: 
+- name: getSentiments
+  flow:
+  - post: 
+      url: /newsreader

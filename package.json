@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "aws-sdk": "^2.1393.0",
+    "axios": "^1.4.0",
+    "failure-lambda": "^0.4.4"
+  }
+}
